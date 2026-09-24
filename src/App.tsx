@@ -579,7 +579,7 @@ function ContactForm() {
 
   return (
     <form
-      className="reveal"
+      className="reveal contact-form"
       onSubmit={handleSubmit}
       style={{
         display: 'flex',
@@ -590,6 +590,7 @@ function ContactForm() {
     >
 
       <div
+        className="contact-name-email"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
@@ -721,7 +722,7 @@ export default function App() {
       <Cursor />
 
       {/* ── NAV ── */}
-      <nav style={{
+      <nav className="site-nav" style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         padding: '1.25rem 3rem',
         background: navScrolled ? 'rgba(8,8,8,0.92)' : 'transparent',
@@ -741,7 +742,7 @@ export default function App() {
         >
           RE<span style={{ color: '#f0ede8' }}>.</span>Aziz
         </div>
-        <div style={{ display: 'flex', gap: '2.5rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.12em' }}>
+        <div className="nav-menu" style={{ display: 'flex', gap: '2.5rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.12em' }}>
           {['home', 'about', 'projects', 'skills', 'contact'].map((s) => (
             <button
               key={s}
@@ -759,7 +760,7 @@ export default function App() {
           ))}
         </div>
         {/* Social icons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
+        <div className="nav-socials" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
           <a
             href="https://github.com/Turjoaziz"
             target="_blank"
@@ -837,19 +838,19 @@ export default function App() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="home" style={{
+      <section id="home" className="grid-bg hero-section" style={{
         position: 'relative', height: '100vh',
         display: 'grid', gridTemplateColumns: '1fr 1fr',
         alignItems: 'center',
         padding: '0 3rem',
         overflow: 'hidden',
-      }} className="grid-bg">
+      }}>
         <ParticleCanvas />
         <div className="scanline" />
 
         {/* ── Left: Text ── */}
-        <div style={{ position: 'relative', zIndex: 2 }}>
-          <h1 style={{
+        <div className="hero-copy" style={{ position: 'relative', zIndex: 2 }}>
+          <h1 className="hero-title" style={{
             fontFamily: "'Anton', sans-serif",
             fontSize: 'clamp(3rem, 8vw, 8rem)',
             lineHeight: 0.88,
@@ -881,7 +882,7 @@ export default function App() {
             ]} />
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="hero-actions" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <button
               onClick={() => scrollTo('projects')}
               data-hover
@@ -918,13 +919,13 @@ export default function App() {
         </div>
 
         {/* ── Right: Photo + Status + Globe ── */}
-        <div style={{
+        <div className="hero-visual" style={{
           position: 'relative', zIndex: 2,
           display: 'flex', flexDirection: 'column',
           alignItems: 'center', gap: '1.5rem',
         }}>
           {/* Profile picture */}
-          <div style={{ position: 'relative' }}>
+          <div className="hero-avatar-wrap" style={{ position: 'relative' }}>
             {/* Rotating accent ring */}
             <div style={{
               position: 'absolute', inset: '-6px', borderRadius: '50%',
@@ -938,6 +939,7 @@ export default function App() {
             <img
               src={GITHUB_AVATAR}
               alt="Rahmatul Aziz"
+              className="hero-avatar"
               style={{
                 width: '220px', height: '220px',
                 borderRadius: '50%',
@@ -955,7 +957,7 @@ export default function App() {
           </div>
 
           {/* Available for opportunities */}
-          <div style={{
+          <div className="hero-availability" style={{
             display: 'flex', alignItems: 'center', gap: '0.6rem',
             background: 'rgba(0,255,135,0.06)',
             border: '1px solid rgba(0,255,135,0.2)',
@@ -978,7 +980,7 @@ export default function App() {
           </div>
 
           {/* Globe */}
-          <div style={{
+          <div className="hero-globe" style={{
             background: 'rgba(255,255,255,0.02)',
             border: '1px solid rgba(255,255,255,0.06)',
             padding: '1rem 1.5rem',
@@ -996,7 +998,7 @@ export default function App() {
         </div>
 
         {/* Scroll indicator */}
-        <div style={{
+        <div className="hero-scroll" style={{
           position: 'absolute', bottom: '2.5rem', left: '3rem',
           display: 'flex', alignItems: 'center', gap: '1rem',
           fontFamily: "'JetBrains Mono', monospace",
@@ -1014,7 +1016,7 @@ export default function App() {
         </div>
 
         {/* Stats bottom-right */}
-        <div style={{
+        <div className="hero-stats" style={{
           position: 'absolute', right: '3rem', bottom: '3rem',
           display: 'flex', gap: '2.5rem', zIndex: 2,
         }}>
@@ -1051,11 +1053,11 @@ export default function App() {
       </div>
 
       {/* ── ABOUT ── */}
-      <section id="about" style={{ padding: '8rem 3rem', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+      <section id="about" className="about-section" style={{ padding: '8rem 3rem', position: 'relative', overflow: 'hidden' }}>
+        <div className="about-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
 
           {/* Profile Image */}
-          <div className="reveal-left" style={{ position: 'relative' }}>
+          <div className="reveal-left about-photo" style={{ position: 'relative' }}>
             <div style={{
               position: 'absolute', inset: '-10px',
               background: 'linear-gradient(135deg, #00ff87, #7b5ea7)',
@@ -1071,7 +1073,7 @@ export default function App() {
               }}
             />
             {/* Floating badge */}
-            <div className="float-1 grad-border" style={{
+            <div className="float-1 grad-border about-badge" style={{
               position: 'absolute', bottom: '-1.5rem', right: '-1.5rem',
               background: '#111', padding: '1.2rem 1.5rem', zIndex: 2,
             }}>
@@ -1126,9 +1128,9 @@ export default function App() {
       </section>
 
       {/* ── PROJECTS ── */}
-      <section id="projects" style={{ padding: '8rem 3rem', background: '#0a0a0a' }}>
+      <section id="projects" className="projects-section" style={{ padding: '8rem 3rem', background: '#0a0a0a' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
+          <div className="reveal projects-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
             <div>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', color: '#00ff87', letterSpacing: '0.3em', marginBottom: '1rem' }}>
                 {'// SELECTED WORK'}
@@ -1159,7 +1161,7 @@ export default function App() {
             </a>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5px', background: 'rgba(255,255,255,0.04)' }}>
+          <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5px', background: 'rgba(255,255,255,0.04)' }}>
             {projects.map((p) => (
               <TiltCard key={p.title} className="reveal">
                 <a
@@ -1167,6 +1169,7 @@ export default function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-hover
+                  className="project-card-link"
                   style={{
                     display: 'block', background: '#0d0d0d',
                     overflow: 'hidden', position: 'relative',
@@ -1184,7 +1187,7 @@ export default function App() {
                     onMouseLeave={e => { const img = e.target as HTMLImageElement; img.style.opacity = '0.35'; img.style.transform = 'scale(1)' }}
                   />
                   <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${p.color}0a, transparent)` }} />
-                  <div style={{
+                  <div className="project-card-content" style={{
                     position: 'absolute', inset: 0, padding: '2rem',
                     display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
                     background: 'linear-gradient(to top, rgba(8,8,8,0.96) 0%, transparent 60%)',
@@ -1197,7 +1200,7 @@ export default function App() {
                         {p.year}
                       </span>
                     </div>
-                    <h3 style={{
+                    <h3 className="project-card-title" style={{
                       fontFamily: "'Anton', sans-serif",
                       fontSize: '2rem', color: '#f0ede8',
                       letterSpacing: '0.02em', lineHeight: 1,
@@ -1205,7 +1208,7 @@ export default function App() {
                     }}>
                       {p.title}
                     </h3>
-                    <p style={{
+                    <p className="project-card-desc" style={{
                       fontFamily: "'Outfit', sans-serif",
                       fontSize: '0.82rem', color: '#9b9b9b',
                       lineHeight: 1.65, fontWeight: 300, marginBottom: '1rem',
@@ -1233,8 +1236,8 @@ export default function App() {
       </section>
 
       {/* ── SKILLS ── */}
-      <section id="skills" style={{ padding: '8rem 3rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
+      <section id="skills" className="skills-section" style={{ padding: '8rem 3rem' }}>
+        <div className="skills-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
           <div>
             <div className="reveal" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', color: '#00ff87', letterSpacing: '0.3em', marginBottom: '1rem' }}>
               {'// EXPERTISE'}
@@ -1283,7 +1286,7 @@ export default function App() {
       </section>
 
       {/* ── MARQUEE CTA ── */}
-      <div style={{ padding: '5rem 3rem', overflow: 'hidden', background: '#0a0a0a' }}>
+      <div className="cta-marquee" style={{ padding: '5rem 3rem', overflow: 'hidden', background: '#0a0a0a' }}>
         <div style={{ overflow: 'hidden' }}>
           <div className="marquee-track" style={{ display: 'flex', gap: '2rem', width: 'max-content', alignItems: 'center' }}>
             {Array(8).fill(0).map((_, i) => (
@@ -1302,7 +1305,7 @@ export default function App() {
       </div>
 
       {/* ── CONTACT ── */}
-      <section id="contact" style={{ padding: '8rem 3rem', background: '#080808', position: 'relative', overflow: 'hidden' }}>
+      <section id="contact" className="contact-section" style={{ padding: '8rem 3rem', background: '#080808', position: 'relative', overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', bottom: '-2rem', right: '-2rem',
           fontFamily: "'Anton', sans-serif",
@@ -1335,7 +1338,7 @@ export default function App() {
           <ContactForm />
 
           <div
-            className="reveal"
+            className="reveal contact-links"
             style={{
               marginTop: '4rem',
               paddingTop: '3rem',
@@ -1431,7 +1434,7 @@ export default function App() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer style={{
+      <footer className="site-footer" style={{
         padding: '2rem 3rem',
         borderTop: '1px solid rgba(255,255,255,0.05)',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
