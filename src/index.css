@@ -202,3 +202,341 @@ button, input, textarea { font: inherit; }
   }
   html { scroll-behavior: auto; }
 }
+
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE / MOBILE
+   ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .site-nav {
+    padding: 0.85rem 1.25rem !important;
+    flex-wrap: wrap !important;
+    row-gap: 0.8rem !important;
+    background: rgba(8, 8, 8, 0.94) !important;
+    backdrop-filter: blur(14px) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 1.25rem !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.1rem;
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-menu button {
+    flex: 0 0 auto;
+    font-size: 0.62rem !important;
+  }
+
+  .nav-socials {
+    gap: 0.45rem !important;
+  }
+
+  .nav-socials a {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .hero-section {
+    height: auto !important;
+    min-height: 100svh;
+    grid-template-columns: 1fr !important;
+    padding: 9rem 1.5rem 4rem !important;
+    gap: 3rem !important;
+    overflow: visible !important;
+  }
+
+  .hero-copy {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 13vw, 5.4rem) !important;
+    line-height: 0.9 !important;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: 100%;
+  }
+
+  .hero-avatar {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .hero-globe {
+    padding: 0.8rem 1rem !important;
+  }
+
+  .hero-globe svg {
+    width: 135px !important;
+    height: 135px !important;
+  }
+
+  .hero-scroll {
+    display: none !important;
+  }
+
+  .hero-stats {
+    position: static !important;
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem !important;
+    padding-top: 0.5rem;
+  }
+
+  .hero-stats > div {
+    text-align: center !important;
+  }
+
+  .about-section,
+  .projects-section,
+  .skills-section,
+  .contact-section {
+    padding: 6rem 1.5rem !important;
+  }
+
+  .about-grid,
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 4rem !important;
+  }
+
+  .about-photo {
+    width: min(100%, 380px);
+    margin: 0 auto;
+  }
+
+  .about-badge {
+    right: 0 !important;
+    bottom: -1rem !important;
+  }
+
+  .projects-header {
+    align-items: flex-start !important;
+    gap: 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-card-link {
+    aspect-ratio: auto !important;
+    min-height: 430px;
+  }
+
+  .project-card-content {
+    padding: 1.5rem !important;
+  }
+
+  .cta-marquee {
+    padding: 3.5rem 1.5rem !important;
+  }
+
+  .contact-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2rem 1.25rem !important;
+  }
+
+  .site-footer {
+    padding: 1.5rem !important;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-nav {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .nav-menu {
+    justify-content: flex-start;
+    gap: 1rem !important;
+    padding: 0 0.15rem 0.1rem;
+  }
+
+  .nav-socials a {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .hero-section {
+    padding: 8.5rem 1rem 3rem !important;
+    gap: 2.25rem !important;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.7rem, 15vw, 4.2rem) !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .hero-copy > div:nth-of-type(1) {
+    font-size: 0.92rem !important;
+    line-height: 1.7;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.8rem !important;
+  }
+
+  .hero-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem !important;
+  }
+
+  .hero-actions button {
+    width: 100%;
+    padding: 0.82rem 0.75rem !important;
+    font-size: 0.62rem !important;
+  }
+
+  .hero-avatar {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .hero-availability {
+    max-width: 100%;
+    padding: 0.5rem 0.8rem !important;
+  }
+
+  .hero-availability span {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .hero-globe {
+    width: min(100%, 240px);
+  }
+
+  .hero-stats {
+    gap: 0.35rem !important;
+  }
+
+  .hero-stats > div > div:first-child {
+    font-size: 1.65rem !important;
+  }
+
+  .hero-stats > div > div:last-child {
+    font-size: 0.47rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .about-section,
+  .projects-section,
+  .skills-section,
+  .contact-section {
+    padding: 4.75rem 1rem !important;
+  }
+
+  .about-grid,
+  .skills-grid {
+    gap: 3rem !important;
+  }
+
+  .about-photo {
+    width: min(92%, 320px);
+  }
+
+  .about-badge {
+    right: -0.25rem !important;
+    padding: 0.9rem 1rem !important;
+  }
+
+  .projects-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  .project-card-link {
+    min-height: 455px;
+  }
+
+  .project-card-content {
+    padding: 1.25rem !important;
+  }
+
+  .project-card-title {
+    font-size: 1.65rem !important;
+  }
+
+  .project-card-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .contact-name-email {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px !important;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr !important;
+    gap: 1.6rem !important;
+    margin-top: 3rem !important;
+    padding-top: 2rem !important;
+  }
+
+  .cta-marquee {
+    padding: 2.75rem 1rem !important;
+  }
+
+  .site-footer {
+    padding: 1.25rem 1rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .site-footer > div:first-child {
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-menu {
+    gap: 0.75rem !important;
+  }
+
+  .nav-menu button {
+    font-size: 0.56rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .hero-title {
+    font-size: 2.65rem !important;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-link {
+    min-height: 480px;
+  }
+}
